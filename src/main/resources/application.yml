@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: azure-spring-workshop
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  cloud:
+    azure:
+      active-directory:
+        enabled: true
+        profile:
+          tenant-id: ${AZURE_ACTIVE_DIRECTORY_PROFILE_TENANT_ID}
+        credential:
+          client-id: ${AZURE_ACTIVE_DIRECTORY_CREDENTIAL_CLIENT_ID}
+          client-secret: ${AZURE_ACTIVE_DIRECTORY_CREDENTIAL_CLIENT_SECRET}
+      storage:
+        connection-string: ${AZURE_STORAGE_CONNECTION_STRING}
+        blob:
+          endpoint: ${AZURE_STORAGE_BLOB_ENDPOINT}
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
