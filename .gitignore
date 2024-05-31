@@ -34,3 +34,4 @@ build/
 
 ### Environmental Variables
 .env
+*.env
